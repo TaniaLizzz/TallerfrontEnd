@@ -1,0 +1,27 @@
+<div class="container" *ngIf="mascota">
+  <h2>Detalle de la Mascota</h2>
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img *ngIf="mascota.foto" [src]="mascota.foto" class="card-img" alt="{{ mascota.nombre }}">
+        <span *ngIf="!mascota.foto">Sin foto disponible</span>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ mascota.nombre }}</h5>
+          <p class="card-text"><strong>Especie:</strong> {{ mascota.especie }}</p>
+          <p class="card-text" *ngIf="mascota.raza"><strong>Raza:</strong> {{ mascota.raza }}</p>
+          <p class="card-text" *ngIf="mascota.edad !== null"><strong>Edad:</strong> {{ mascota.edad }} años</p>
+          <p class="card-text"><strong>Estado de Adopción:</strong> {{ mascota.estado_adopcion }}</p>
+          <p class="card-text" *ngIf="mascota.descripcion"><strong>Descripción:</strong> {{ mascota.descripcion }}</p>
+          <a class="btn btn-info mr-2" [routerLink]="['/mascotas/editar', mascota.id]">Editar</a>
+          <a class="btn btn-secondary" [routerLink]="['/mascotas']">Volver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!mascota">
+  <p>Cargando...</p>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+  <h2 class="text-center mb-4">Lista de Mascotas en Adopción</h2>
+  <a class="btn btn-primary mb-3" [routerLink]="['/mascotas/crear']">Nueva Mascota</a>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Foto</th>
+          <th>Nombre</th>
+          <th>Especie</th>
+          <th>Raza</th>
+          <th>Edad</th>
+          <th>Estado Adopción</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mascota of mascotas | async">
+          <td>{{ mascota.id }}</td>
+          <td>
+            <div class="foto-container">
+              <img *ngIf="mascota.foto" [src]="'http://localhost:4000' + mascota.foto" alt="{{ mascota.nombre }}">
+              <span *ngIf="!mascota.foto">Sin foto</span>
+            </div>
+          </td>
+          <td>{{ mascota.nombre }}</td>
+          <td>{{ mascota.especie }}</td>
+          <td>{{ mascota.raza }}</td>
+          <td>{{ mascota.edad }}</td>
+          <td>{{ mascota.estado_adopcion }}</td>
+          <td>{{ mascota.descripcion }}</td>
+          <td>
+            <a class="btn btn-info btn-sm mr-2" [routerLink]="['/mascotas/editar', mascota.id]">Editar</a>
+            <button class="btn btn-danger btn-sm" (click)="borrarMascota(mascota.id)">Borrar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

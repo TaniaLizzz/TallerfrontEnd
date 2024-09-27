@@ -1,0 +1,36 @@
+.table {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+  }
+  
+  thead {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .foto-container {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eaeaea;
+  }
+  
+  .foto-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .foto-container img:hover {
+    transform: scale(1.1);
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  

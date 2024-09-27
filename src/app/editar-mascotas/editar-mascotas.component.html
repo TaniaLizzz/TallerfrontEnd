@@ -1,0 +1,61 @@
+<div class="container" *ngIf="mascota">
+  <h2>Editar Mascota</h2>
+  <form (ngSubmit)="onSubmit()" #mascotaForm="ngForm">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" class="form-control" required [(ngModel)]="mascota.nombre" name="nombre" #nombre="ngModel">
+      <div *ngIf="nombre.invalid && nombre.touched" class="text-danger">
+        El nombre es requerido.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="especie">Especie</label>
+      <input type="text" id="especie" class="form-control" required [(ngModel)]="mascota.especie" name="especie" #especie="ngModel">
+      <div *ngIf="especie.invalid && especie.touched" class="text-danger">
+        La especie es requerida.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="raza">Raza</label>
+      <input type="text" id="raza" class="form-control" [(ngModel)]="mascota.raza" name="raza">
+    </div>
+
+    <div class="form-group">
+      <label for="edad">Edad</label>
+      <input type="number" id="edad" class="form-control" [(ngModel)]="mascota.edad" name="edad">
+    </div>
+
+    <div class="form-group">
+      <label for="estado_adopcion">Estado de Adopción</label>
+      <select id="estado_adopcion" class="form-control" required [(ngModel)]="mascota.estado_adopcion" name="estado_adopcion" #estado="ngModel">
+        <option value="" disabled>Selecciona un estado</option>
+        <option value="disponible">Disponible</option>
+        <option value="adoptado">Adoptado</option>
+        <option value="en proceso">En Proceso</option>
+      </select>
+      <div *ngIf="estado.invalid && estado.touched" class="text-danger">
+        El estado de adopción es requerido.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="foto">Foto</label>
+      <input type="text" id="foto" class="form-control" [(ngModel)]="mascota.foto" name="foto" placeholder="/img/imagen.jpg">
+      <small class="form-text text-muted">La ruta de la foto debe comenzar con '/img/'</small>
+    </div>
+
+    <div class="form-group">
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" class="form-control" [(ngModel)]="mascota.descripcion" name="descripcion"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="mascotaForm.invalid">Actualizar Mascota</button>
+    <a class="btn btn-secondary ml-2" [routerLink]="['/mascotas']">Cancelar</a>
+  </form>
+</div>
+
+<div *ngIf="!mascota">
+  <p>Cargando...</p>
+</div>
