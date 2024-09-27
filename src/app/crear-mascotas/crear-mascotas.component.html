@@ -31,9 +31,9 @@
       <label for="estado_adopcion">Estado de Adopción</label>
       <select id="estado_adopcion" class="form-control" required [(ngModel)]="mascota.estado_adopcion" name="estado_adopcion" #estado="ngModel">
         <option value="" disabled selected>Selecciona un estado</option>
-        <option value="disponible">Disponible</option>
-        <option value="adoptado">Adoptado</option>
-        <option value="en proceso">En Proceso</option>
+        <option value="Disponible">Disponible</option>
+        <option value="Adoptado">Adoptado</option>
+        <option value="En proceso">En Proceso</option>
       </select>
       <div *ngIf="estado.invalid && estado.touched" class="text-danger">
         El estado de adopción es requerido.
