@@ -1,1 +1,39 @@
-<p>lista-usuarios works!</p>
+<div class="container mt-4">
+    <h2>Lista de Usuarios</h2>
+  
+    <div *ngIf="error" class="alert alert-danger">
+      {{ error }}
+    </div>
+  
+    <a routerLink="/usuarios/crear" class="btn btn-primary mb-3">Crear nuevo usuario</a>
+  
+    <table class="table table-striped" *ngIf="usuarios.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombres</th>
+          <th>Usuario</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.id }}</td>
+          <td>{{ usuario.nombres }}</td>
+          <td>{{ usuario.usuario }}</td>
+          <td>{{ usuario.rol }}</td>
+          <td>
+            <a [routerLink]="['/usuarios/detalle', usuario.id]" class="btn btn-info btn-sm">Detalle</a>
+            <a [routerLink]="['/usuarios/editar', usuario.id]" class="btn btn-primary btn-sm">Editar</a>
+            <button (click)="eliminarUsuario(usuario.id)" class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="usuarios.length === 0 && !error">
+      No hay usuarios registrados.
+    </div>
+  </div>
+  

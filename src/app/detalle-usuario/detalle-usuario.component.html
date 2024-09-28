@@ -1,1 +1,30 @@
-<p>detalle-usuario works!</p>
+<!-- src/app/detalle-usuario/detalle-usuario.component.html -->
+
+<div class="container mt-4" *ngIf="usuario">
+    <h2>Detalle del Usuario</h2>
+  
+    <div class="card">
+      <div class="card-header">
+        Información Personal
+      </div>
+      <div class="card-body">
+        <p><strong>ID:</strong> {{ usuario.id }}</p>
+        <p><strong>Nombres:</strong> {{ usuario.nombres }}</p>
+        <p><strong>Usuario:</strong> {{ usuario.usuario }}</p>
+        <p><strong>Rol:</strong> {{ usuario.rol }}</p>
+        <p *ngIf="usuario.telefono"><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
+        <p *ngIf="usuario.edad"><strong>Edad:</strong> {{ usuario.edad }}</p>
+        <p *ngIf="usuario.foto"><strong>Foto:</strong> <a [href]="usuario.foto" target="_blank">Ver Foto</a></p>
+      </div>
+    </div>
+  
+    <button class="btn btn-secondary mt-3" (click)="regresar()">Regresar</button>
+  </div>
+  
+  <div *ngIf="error" class="container mt-4">
+    <div class="alert alert-danger">
+      {{ error }}
+    </div>
+    <button class="btn btn-secondary" (click)="regresar()">Regresar</button>
+  </div>
+  

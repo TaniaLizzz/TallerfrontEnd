@@ -1,1 +1,55 @@
-<p>editar-usuario works!</p>
+<!-- src/app/editar-usuario/editar-usuario.component.html -->
+
+<div class="container mt-4">
+    <h2>Editar Usuario</h2>
+  
+    <div *ngIf="error" class="alert alert-danger">
+      {{ error }}
+    </div>
+  
+    <form (ngSubmit)="actualizarUsuario()">
+      <div class="mb-3">
+        <label for="nombres" class="form-label">Nombres</label>
+        <input type="text" id="nombres" class="form-control" [(ngModel)]="usuario.nombres" name="nombres" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="usuario" class="form-label">Usuario</label>
+        <input type="text" id="usuario" class="form-control" [(ngModel)]="usuario.usuario" name="usuario" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" id="password" class="form-control" [(ngModel)]="usuario.password" name="password" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="rol" class="form-label">Rol</label>
+        <select id="rol" class="form-select" [(ngModel)]="usuario.rol" name="rol" required>
+          <option value="" disabled>Selecciona un rol</option>
+          <option value="admin">Administrador</option>
+          <option value="usuario">Usuario</option>
+          <!-- Agrega otros roles según tus necesidades -->
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="text" id="telefono" class="form-control" [(ngModel)]="usuario.telefono" name="telefono">
+      </div>
+  
+      <div class="mb-3">
+        <label for="edad" class="form-label">Edad</label>
+        <input type="number" id="edad" class="form-control" [(ngModel)]="usuario.edad" name="edad">
+      </div>
+  
+      <div class="mb-3">
+        <label for="foto" class="form-label">Foto URL</label>
+        <input type="text" id="foto" class="form-control" [(ngModel)]="usuario.foto" name="foto">
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
+      <a routerLink="/lista-usuarios" class="btn btn-secondary ms-2">Cancelar</a>
+    </form>
+  </div>
+  
