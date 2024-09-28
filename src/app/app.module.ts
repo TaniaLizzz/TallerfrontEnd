@@ -19,6 +19,8 @@ import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.componen
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.componen
     ListaUsuariosComponent,
     CrearUsuarioComponent,
     DetalleUsuarioComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    AboutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
