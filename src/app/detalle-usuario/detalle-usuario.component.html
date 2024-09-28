@@ -18,13 +18,6 @@
       </div>
     </div>
   
-    <button class="btn btn-secondary mt-3" (click)="regresar()">Regresar</button>
-  </div>
-  
-  <div *ngIf="error" class="container mt-4">
-    <div class="alert alert-danger">
-      {{ error }}
-    </div>
-    <button class="btn btn-secondary" (click)="regresar()">Regresar</button>
+    <a class="btn btn-secondary" [routerLink]="['/usuarios']">Volver</a>
   </div>
   

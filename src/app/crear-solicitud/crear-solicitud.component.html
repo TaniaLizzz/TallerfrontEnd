@@ -1,1 +1,37 @@
-<p>crear-solicitud works!</p>
+<div class="container">
+    <h2>Crear Nueva Solicitud</h2>
+    <form (ngSubmit)="onSubmit()" #solicitudForm="ngForm">
+      <div class="form-group">
+        <label for="mascotaId">ID de la Mascota</label>
+        <input type="text" id="mascotaId" class="form-control" required [(ngModel)]="solicitud.mascotaId" name="mascotaId" #mascotaId="ngModel">
+        <div *ngIf="mascotaId.invalid && mascotaId.touched" class="text-danger">
+          El ID de la mascota es requerido.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="adoptanteId">ID del Adoptante</label>
+        <input type="text" id="adoptanteId" class="form-control" required [(ngModel)]="solicitud.adoptanteId" name="adoptanteId" #adoptanteId="ngModel">
+        <div *ngIf="adoptanteId.invalid && adoptanteId.touched" class="text-danger">
+          El ID del adoptante es requerido.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="estado_adopcion">Estado de Adopción</label>
+        <select id="estado_adopcion" class="form-control" required [(ngModel)]="solicitud.estado_adopcion" name="estado_adopcion" #estado="ngModel">
+          <option value="" disabled selected>Selecciona un estado</option>
+          <option value="Disponible">Disponible</option>
+          <option value="Adoptado">Adoptado</option>
+          <option value="En proceso">En Proceso</option>
+        </select>
+        <div *ngIf="estado.invalid && estado.touched" class="text-danger">
+          El estado de adopción es requerido.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-success" [disabled]="solicitudForm.invalid">Crear Solicitud</button>
+      <a class="btn btn-secondary ml-2" [routerLink]="['/solicitudes']">Cancelar</a>
+    </form>
+  </div>
+  

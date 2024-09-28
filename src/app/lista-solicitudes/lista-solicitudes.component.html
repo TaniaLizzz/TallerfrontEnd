@@ -1,1 +1,34 @@
-<p>lista-solicitudes works!</p>
+<div class="container">
+  <h2 class="text-center mb-4">Lista de Solicitudes de Adopción</h2>
+  <a class="btn btn-primary mb-3" [routerLink]="['/solicitudes/crear']">Nueva Solicitud</a>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>ID de Mascota</th>
+          <th>ID de Adoptante</th>
+          <th>Estado de Adopción</th>
+          <th>Fecha de Creación</th>
+          <th>Fecha de Finalización</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let solicitud of solicitudes | async">
+          <td>{{ solicitud.id }}</td>
+          <td>{{ solicitud.mascotaId }}</td>
+          <td>{{ solicitud.adoptanteId }}</td>
+          <td>{{ solicitud.estado_adopcion }}</td>
+          <td>{{ solicitud.fechaCreacion | date }}</td>
+          <td>{{ solicitud.fechaFin ? (solicitud.fechaFin | date) : 'No disponible' }}</td>
+          <td>
+            <a class="btn btn-info btn-sm mr-2" [routerLink]="['/solicitudes/editar', solicitud.id]">Editar</a>
+            <a class="btn btn-secondary btn-sm mr-2" [routerLink]="['/solicitudes/detalle', solicitud.id]">Detalle</a>
+            <button class="btn btn-danger btn-sm" (click)="borrarSolicitud(solicitud.id)">Borrar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
