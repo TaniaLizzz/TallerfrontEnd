@@ -1,23 +1,21 @@
 <!-- src/app/detalle-usuario/detalle-usuario.component.html -->
 
 <div class="container mt-4" *ngIf="usuario">
-    <h2>Detalle del Usuario</h2>
-  
-    <div class="card">
-      <div class="card-header">
-        Información Personal
-      </div>
-      <div class="card-body">
-        <p><strong>ID:</strong> {{ usuario.id }}</p>
-        <p><strong>Nombres:</strong> {{ usuario.nombres }}</p>
-        <p><strong>Usuario:</strong> {{ usuario.usuario }}</p>
-        <p><strong>Rol:</strong> {{ usuario.rol }}</p>
-        <p *ngIf="usuario.telefono"><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
-        <p *ngIf="usuario.edad"><strong>Edad:</strong> {{ usuario.edad }}</p>
-        <p *ngIf="usuario.foto"><strong>Foto:</strong> <a [href]="usuario.foto" target="_blank">Ver Foto</a></p>
-      </div>
+  <h2 class="text-center">Detalle de {{ usuario.nombres }}</h2> <!-- Título actualizado con el nombre del usuario -->
+
+  <div class="card usuario-card">
+    <div class="card-header">
+      Información Personal
     </div>
-  
-    <a class="btn btn-secondary" [routerLink]="['/usuarios']">Volver</a>
+    <div class="card-body">
+      <p><strong>ID:</strong> {{ usuario.id }}</p>
+      <p><strong>Nombres:</strong> {{ usuario.nombres }}</p>
+      <p><strong>Usuario:</strong> {{ usuario.usuario }}</p>
+      <p><strong>Rol:</strong> {{ usuario.rol }}</p>
+      <p *ngIf="usuario.telefono"><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
+      <p *ngIf="usuario.edad"><strong>Edad:</strong> {{ usuario.edad }}</p>
+    </div>
   </div>
-  
+
+  <a class="btn btn-secondary mt-3" [routerLink]="['/usuarios']">Volver</a>
+</div>

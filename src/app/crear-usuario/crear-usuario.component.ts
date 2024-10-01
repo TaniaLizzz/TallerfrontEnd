@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CrearUsuarioComponent {
 
-  usuario: UsuarioModel = new UsuarioModel(0, '', '', '', '', '', 0, '');
+  usuario: UsuarioModel = new UsuarioModel(0, '', '', '', '', '', 0);
 
   error: string = '';
 

@@ -42,12 +42,7 @@
         <label for="edad" class="form-label">Edad</label>
         <input type="number" id="edad" class="form-control" [(ngModel)]="usuario.edad" name="edad">
       </div>
-  
-      <div class="mb-3">
-        <label for="foto" class="form-label">Foto URL</label>
-        <input type="text" id="foto" class="form-control" [(ngModel)]="usuario.foto" name="foto">
-      </div>
-  
+
       <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
 
       <a class="btn btn-secondary ml-2" [routerLink]="['/usuarios']">Cancelar</a>

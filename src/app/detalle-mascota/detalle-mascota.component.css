@@ -1,0 +1,4 @@
+.card-img {
+    height: 200px; /* Altura fija para la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
+}

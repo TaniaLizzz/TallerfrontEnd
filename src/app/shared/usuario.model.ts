@@ -6,8 +6,7 @@ export class UsuarioModel {
       public password: string,
       public rol: string,
       public telefono?: string,
-      public edad?: number,
-      public foto?: string
+      public edad?: number
     ) {}
   }
   

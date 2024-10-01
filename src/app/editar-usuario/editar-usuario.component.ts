@@ -12,7 +12,7 @@ import { UsuarioModel } from '../shared/usuario.model';
 })
 export class EditarUsuarioComponent implements OnInit {
 
-  usuario: UsuarioModel = new UsuarioModel(0, '', '', '', '', '', 0, '');
+  usuario: UsuarioModel = new UsuarioModel(0, '', '', '', '', '', 0);
   error: string = '';
 
   constructor(
