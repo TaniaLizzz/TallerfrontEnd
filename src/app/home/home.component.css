@@ -58,3 +58,38 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
+.mascotas-img {
+    width: 40%; /* Imagen un poco más pequeña */
+    max-width: 250px; /* Límite máximo de tamaño */
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Sombra un poco más marcada */
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.welcome-lead {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn-warning {
+    background-color: #f39c12; /* Color principal del botón */
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #d98808; /* Color del hover */
+    color: #fff;
+}
