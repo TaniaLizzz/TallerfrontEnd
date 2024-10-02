@@ -5,7 +5,8 @@
     <div class="col-md-4 mb-4" *ngFor="let mascota of mascotas | async">
       <div class="card h-100">
         <a [routerLink]="['/mascotas/detalle', mascota.id]"> <!-- Enlace a la página de detalle -->
-          <img *ngIf="mascota.foto" [src]="'http://localhost:4000' + mascota.foto" alt="{{ mascota.nombre }}" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;"> <!-- Asegura que todas las imágenes tengan el mismo tamaño -->
+          <img *ngIf="mascota.foto" [src]="mascota.foto" alt="{{ mascota.nombre }}" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;">
+          <p *ngIf="!mascota.foto" class="text-danger">No hay imagen disponible</p> <!-- Mensaje si no hay imagen -->
         </a>
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">{{ mascota.nombre }}</h5>
@@ -15,7 +16,7 @@
           <div class="mt-auto">
             <a class="btn btn-info btn-sm me-2" [routerLink]="['/mascotas/editar', mascota.id]">Editar</a>
             <a class="btn btn-secondary btn-sm me-2" [routerLink]="['/mascotas/detalle', mascota.id]">Detalle</a>
-            <button class="btn btn-danger btn-sm" (click)="borrarMascota(mascota.id)">Borrar</button>
+            <button class="btn btn-danger btn-sm" (click)="borrarMascota(mascota.id)">Eliminar</button>
           </div>
         </div>
       </div>

@@ -42,9 +42,18 @@
 
     <div class="form-group">
       <label for="foto">Foto</label>
-      <input type="text" id="foto" class="form-control" [(ngModel)]="mascota.foto" name="foto" placeholder="/img/imagen.jpg">
-      <small class="form-text text-muted">La ruta de la foto debe comenzar con '/img/'</small>
+      <input 
+        type="text" 
+        id="foto" 
+        class="form-control" 
+        [(ngModel)]="mascota.foto" 
+        name="foto" 
+        placeholder="https://ejemplo.com/imagen.jpg" 
+        required 
+      >
+      <small class="form-text text-muted">La ruta debe ser una dirección de imagen válida</small>
     </div>
+    
 
     <div class="form-group">
       <label for="descripcion">Descripción</label>

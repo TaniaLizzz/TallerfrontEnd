@@ -11,7 +11,11 @@
 
     <div class="form-group">
       <label for="especie">Especie</label>
-      <input type="text" id="especie" class="form-control" required [(ngModel)]="mascota.especie" name="especie" #especie="ngModel">
+      <select id="especie" class="form-control" required [(ngModel)]="mascota.especie" name="especie" #especie="ngModel">
+        <option value="" disabled selected>Selecciona una especie</option>
+        <option value="Perro">Perro</option>
+        <option value="Gato">Gato</option>
+      </select>
       <div *ngIf="especie.invalid && especie.touched" class="text-danger">
         La especie es requerida.
       </div>
@@ -41,10 +45,20 @@
     </div>
 
     <div class="form-group">
-      <label for="foto">Foto</label>
-      <input type="text" id="foto" class="form-control" [(ngModel)]="mascota.foto" name="foto" placeholder="/img/imagen.jpg">
-      <small class="form-text text-muted">La ruta de la foto debe comenzar con '/img/'</small>
+      <label for="foto">Foto (URL)</label>
+      <input 
+        type="text" 
+        id="foto" 
+        class="form-control" 
+        required 
+        [(ngModel)]="mascota.foto" 
+        name="foto" 
+        placeholder="https://ejemplo.com/imagen.jpg" 
+      >
+      <small class="form-text text-muted">Ingresa la URL de la foto.</small>
     </div>
+    
+    
 
     <div class="form-group">
       <label for="descripcion">Descripción</label>

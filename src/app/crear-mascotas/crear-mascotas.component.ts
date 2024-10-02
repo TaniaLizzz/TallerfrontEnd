@@ -9,10 +9,10 @@ import { MascotaService } from '../shared/mascota.service';
   styleUrls: ['./crear-mascotas.component.css']
 })
 export class CrearMascotasComponent {
-
+  // Inicializa mascota con todas las propiedades que tu modelo requiere
   mascota: MascotaModel = new MascotaModel('', '', '');
 
-  constructor(private mascotaService: MascotaService, private router: Router) { }
+  constructor(private mascotaService: MascotaService, private router: Router) {}
 
   onSubmit() {
     this.mascotaService.agregarMascota(this.mascota).subscribe({

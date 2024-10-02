@@ -1,5 +1,8 @@
 .card {
   transition: transform 0.2s; /* Efecto de transición al pasar el mouse */
+  border: none; /* Opcional: quitar borde para un diseño más limpio */
+  border-radius: 8px; /* Bordes redondeados para un aspecto moderno */
+  overflow: hidden; /* Para ocultar el desbordamiento de la imagen */
 }
 
 .card:hover {
@@ -15,6 +18,16 @@
 }
 
 .card-img-top {
-  height: 200px; /* Altura fija para las imágenes */
-  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin deformarla */
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  height: 200px; /* Establecer una altura fija para todas las imágenes */
+  object-fit: contain; /* Ajusta la imagen para que se contenga dentro del área sin recortes */
+  margin: 0; /* Eliminar margen para que se ajuste perfectamente al contenedor */
+  display: block; /* Asegura que no haya espacios debajo de la imagen */
+}
+
+/* Asegurarse de que la tarjeta se ajuste adecuadamente en móviles */
+@media (max-width: 576px) {
+  .card {
+    margin-bottom: 20px; /* Espacio entre las tarjetas en móviles */
+  }
 }

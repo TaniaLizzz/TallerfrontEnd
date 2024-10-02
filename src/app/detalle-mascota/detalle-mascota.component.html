@@ -3,8 +3,10 @@
   <div class="card mb-3">
     <div class="row no-gutters">
       <div class="col-md-4">
-        <img *ngIf="mascota.foto" [src]="'http://localhost:4000' + mascota.foto" class="card-img" alt="{{ mascota.nombre }}" style="height: 200px; object-fit: cover;">
-        <span *ngIf="!mascota.foto" class="text-center d-block mt-2">Sin foto disponible</span>
+        <a [routerLink]="['/mascotas/detalle', mascota.id]"> <!-- Enlace a la página de detalle -->
+          <img *ngIf="mascota.foto" [src]="mascota.foto" alt="{{ mascota.nombre }}" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;">
+          <p *ngIf="!mascota.foto" class="text-danger">No hay imagen disponible</p> <!-- Mensaje si no hay imagen -->
+        </a>
       </div>
       <div class="col-md-8">
         <div class="card-body">
