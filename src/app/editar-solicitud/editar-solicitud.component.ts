@@ -35,10 +35,12 @@ export class EditarSolicitudComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log('Formulario enviado', this.solicitud);
     if (this.solicitud) {
+      // Asegúrate de que el modelo tenga los campos necesarios
       this.solicitudService.actualizarSolicitud(this.solicitud).subscribe({
         next: (response) => {
-          console.log(response);
+          console.log('Solicitud actualizada', response);
           this.router.navigate(['/solicitudes']);
         },
         error: (err) => {

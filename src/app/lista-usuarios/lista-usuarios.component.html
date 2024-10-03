@@ -24,9 +24,9 @@
           <td>{{ usuario.usuario }}</td>
           <td>{{ usuario.rol }}</td>
           <td>
-            <a [routerLink]="['/usuarios/detalle', usuario.id]" class="btn btn-info btn-sm">Detalle</a>
-            <a [routerLink]="['/usuarios/editar', usuario.id]" class="btn btn-primary btn-sm">Editar</a>
-            <button (click)="eliminarUsuario(usuario.id)" class="btn btn-danger btn-sm">Eliminar</button>
+            <a class="btn btn-info btn-sm me-2" [routerLink]="['/usuarios/editar', usuario.id]" >Editar</a>
+            <a class="btn btn-secondary btn-sm me-2" [routerLink]="['/usuarios/detalle', usuario.id]">Detalle</a>
+            <button class="btn btn-danger btn-sm" (click)="eliminarUsuario(usuario.id)" >Eliminar</button>
           </td>
         </tr>
       </tbody>

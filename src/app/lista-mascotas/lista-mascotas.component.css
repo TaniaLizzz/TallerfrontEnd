@@ -1,33 +1,51 @@
 .card {
-  transition: transform 0.2s; /* Efecto de transición al pasar el mouse */
-  border: none; /* Opcional: quitar borde para un diseño más limpio */
-  border-radius: 8px; /* Bordes redondeados para un aspecto moderno */
-  overflow: hidden; /* Para ocultar el desbordamiento de la imagen */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones más suaves */
+  border: none; /* Sin borde para un diseño limpio */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta el desbordamiento */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para la tarjeta */
 }
 
 .card:hover {
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño de la tarjeta al pasar el mouse */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa al hover */
 }
 
 .card-body .btn {
-  margin-right: 5px; /* Espacio entre los botones */
+  margin-right: 5px; /* Espacio entre botones */
+  transition: background-color 0.3s; /* Transición para el color de fondo */
 }
 
-.card-body .btn:last-child {
-  margin-right: 0; /* Eliminar margen del último botón */
+.card-body .btn:hover {
+  opacity: 0.9; /* Efecto de opacidad al pasar el mouse */
+}
+
+.card-body .btn-info {
+  background-color: #17a2b8; /* Color personalizado para el botón de editar */
+}
+
+.card-body .btn-secondary {
+  background-color: #6c757d; /* Color para el botón de detalle */
+}
+
+.card-body .btn-danger {
+  background-color: #dc3545; /* Color para el botón de eliminar */
 }
 
 .card-img-top {
-  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-  height: 200px; /* Establecer una altura fija para todas las imágenes */
-  object-fit: contain; /* Ajusta la imagen para que se contenga dentro del área sin recortes */
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+  height: 200px; /* Altura fija para imágenes */
+  object-fit: cover; /* Mantiene la proporción de la imagen y llena el área */
   margin: 0; /* Eliminar margen para que se ajuste perfectamente al contenedor */
   display: block; /* Asegura que no haya espacios debajo de la imagen */
 }
 
-/* Asegurarse de que la tarjeta se ajuste adecuadamente en móviles */
+.text-danger {
+  font-weight: bold; /* Negrita para el mensaje de imagen no disponible */
+}
+
 @media (max-width: 576px) {
   .card {
-    margin-bottom: 20px; /* Espacio entre las tarjetas en móviles */
+    margin-bottom: 20px; /* Espacio entre tarjetas en móviles */
   }
 }

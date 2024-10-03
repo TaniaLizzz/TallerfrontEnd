@@ -1,20 +1,22 @@
-<div class="container" *ngIf="solicitud">
-    <h2>Detalle de la Solicitud</h2>
-    <div class="card mb-3">
-      <div class="card-body">
-        <h5 class="card-title">Solicitud ID: {{ solicitud.id }}</h5>
-        <p class="card-text"><strong>ID de Mascota:</strong> {{ solicitud.mascotaId }}</p>
-        <p class="card-text"><strong>ID de Adoptante:</strong> {{ solicitud.adoptanteId }}</p>
-        <p class="card-text"><strong>Estado de Adopción:</strong> {{ solicitud.estado_adopcion }}</p>
-        <p class="card-text"><strong>Fecha de Creación:</strong> {{ solicitud.fechaCreacion | date }}</p>
-        <p class="card-text"><strong>Fecha de Finalización:</strong> {{ solicitud.fechaFin | date }}</p>
-        <a class="btn btn-info mr-2" [routerLink]="['/solicitudes/editar', solicitud.id]">Editar</a>
-        <a class="btn btn-secondary" [routerLink]="['/solicitudes']">Volver</a>
-      </div>
+<div class="container mt-4" *ngIf="solicitud">
+  <h2 class="text-center">Detalle de la Solicitud</h2> <!-- Título de la solicitud -->
+
+  <div class="card solicitud-card">
+    <div class="card-header">
+      Detalles de la Solicitud
+    </div>
+    <div class="card-body">
+      <p><strong>Solicitud ID:</strong> {{ solicitud.id }}</p>
+      <p><strong>ID de Mascota:</strong> {{ solicitud.mascotaId }}</p>
+      <p><strong>ID de Adoptante:</strong> {{ solicitud.adoptanteId }}</p>
+      <p><strong>Estado de Adopción:</strong> {{ solicitud.estado_adopcion }}</p>
+      <p><strong>Fecha de Creación:</strong> {{ solicitud.fechaCreacion | date }}</p>
+      <p><strong>Fecha Modificación:</strong> {{ solicitud.fechaFin | date }}</p>
+      <a class="btn btn-secondary" [routerLink]="['/solicitudes']">Volver</a>
     </div>
   </div>
-  
-  <div *ngIf="!solicitud">
-    <p>Cargando...</p>
-  </div>
-  
+</div>
+
+<div *ngIf="!solicitud">
+  <p class="loading">Cargando...</p>
+</div>
