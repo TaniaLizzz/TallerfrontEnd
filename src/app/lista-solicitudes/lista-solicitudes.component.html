@@ -21,7 +21,7 @@
           <td>{{ solicitud.adoptanteId }}</td>
           <td>{{ solicitud.estado_adopcion }}</td>
           <td>{{ solicitud.fechaCreacion | date }}</td>
-          <td>{{ solicitud.fechaFin ? (solicitud.fechaFin | date) : 'No disponible' }}</td>
+          <td>{{ solicitud.fechaFin | date }}</td>
           <td>
             <a class="btn btn-info btn-sm mr-2" [routerLink]="['/solicitudes/editar', solicitud.id]">Editar</a>
             <a class="btn btn-secondary btn-sm mr-2" [routerLink]="['/solicitudes/detalle', solicitud.id]">Detalle</a>

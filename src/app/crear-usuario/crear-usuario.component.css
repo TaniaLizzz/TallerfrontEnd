@@ -1,0 +1,31 @@
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    background-color: #f8f9fa; /* Fondo claro para resaltar el formulario */
+  }
+  
+  h2 {
+    color: #343a40; /* Color del título */
+  }
+  
+  .form-control {
+    border: 1px solid #ced4da; /* Bordes de los campos */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  .form-control:focus {
+    border-color: #80bdff; /* Color del borde al hacer foco */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra al hacer foco */
+  }
+  
+  .text-danger {
+    font-size: 0.875rem; /* Tamaño de fuente para mensajes de error */
+  }
+  
+  .btn {
+    margin-top: 10px; /* Espacio entre botones y campos */
+  }
+  

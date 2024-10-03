@@ -9,8 +9,8 @@ import { MascotaService } from '../shared/mascota.service';
   styleUrls: ['./crear-mascotas.component.css']
 })
 export class CrearMascotasComponent {
-  // Inicializa mascota con todas las propiedades que tu modelo requiere
-  mascota: MascotaModel = new MascotaModel('', '', '');
+  // Inicializa mascota con estado_adopcion por defecto a "Disponible"
+  mascota: MascotaModel = new MascotaModel('', '', '', '', undefined, 'Disponible');
 
   constructor(private mascotaService: MascotaService, private router: Router) {}
 

@@ -7,7 +7,7 @@
         <p class="card-text"><strong>ID de Adoptante:</strong> {{ solicitud.adoptanteId }}</p>
         <p class="card-text"><strong>Estado de Adopción:</strong> {{ solicitud.estado_adopcion }}</p>
         <p class="card-text"><strong>Fecha de Creación:</strong> {{ solicitud.fechaCreacion | date }}</p>
-        <p class="card-text" *ngIf="solicitud.fechaFin"><strong>Fecha de Finalización:</strong> {{ solicitud.fechaFin | date }}</p>
+        <p class="card-text"><strong>Fecha de Finalización:</strong> {{ solicitud.fechaFin | date }}</p>
         <a class="btn btn-info mr-2" [routerLink]="['/solicitudes/editar', solicitud.id]">Editar</a>
         <a class="btn btn-secondary" [routerLink]="['/solicitudes']">Volver</a>
       </div>
